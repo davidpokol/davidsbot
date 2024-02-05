@@ -3,10 +3,11 @@ import {
     ChatInputCommandInteraction,
     EmbedBuilder,
     ApplicationCommandOptionType,
-    Colors,
+    Colors, GuildMember,
 } from "discord.js";
-import { Command } from "../Command";
-import { hunTol } from "magyar-rag";
+import {Command} from "../Command";
+import {hunTol} from "magyar-rag";
+import {getName} from "./util/GuildMemberUtil";
 
 export const Hug : Command = {
     name: "hug",
@@ -19,34 +20,33 @@ export const Hug : Command = {
             required: true,
         },
     ],
-    run: async (client: Client, interaction: ChatInputCommandInteraction) => {
+    run: async (client: Client, interaction: ChatInputCommandInteraction): Promise<void> => {
 
-        const memberFrom =  await interaction.guild.members.fetch(
+        let embed = new EmbedBuilder()
+            .setColor(Colors.Red);
+
+        const fromMember: GuildMember =  await interaction.guild.members.fetch(
             interaction.user
-        )
+        );
 
-        let memberTo = await interaction.guild.members.fetch(
+        let toMember: GuildMember = await interaction.guild.members.fetch(
             interaction.options.getUser('member')
-        )
-        let embed  = new EmbedBuilder()
-            .setColor(Colors.Red)
+        );
 
-        let fromName : string = !!memberFrom.nickname ? memberFrom.nickname : memberFrom.user.displayName
-        let toName : string = !!memberTo.nickname ? memberTo.nickname : memberTo.user.displayName
-        let toId: string = memberTo.id
+        const toName = getName(toMember);
+        const fromName = getName(fromMember);
 
-        if (memberTo.id !== process.env.BOT_ID) {
+        if (toMember.id !== process.env.BOT_ID) {
             embed.setDescription(`
-            **${toName}** kapott egy ölelést **${hunTol(fromName)}**!\n
-            ||<@${toId}>||
-            `)
-                .setImage('https://media1.tenor.com/images/d684820e615fb68c21d4a9fea375c6e9/tenor.gif')
+                    **${toName}** kapott egy ölelést **${hunTol(fromName)}**!\n
+                    ||<@${toMember.id}>||`)
+                .setImage('https://media1.tenor.com/images/d684820e615fb68c21d4a9fea375c6e9/tenor.gif');
 
         } else {
-            embed.setDescription(`**Köszönöm az ölelést <@${memberFrom.id}>!**`)
-                .setImage('https://i.imgur.com/rL6PmTl.png')
+            embed.setDescription(`**Köszönöm az ölelést <@${fromMember.id}>!**`)
+                .setImage('https://i.imgur.com/rL6PmTl.png');
         }
 
-        await interaction.reply({embeds: [embed]})
+        await interaction.reply({embeds: [embed]});
     }
 };

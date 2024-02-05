@@ -1,15 +1,20 @@
 import {
     Client,
-    ChatInputCommandInteraction,
+    ChatInputCommandInteraction, GuildMember,
 } from "discord.js";
-import { Command } from "../Command";
+import {Command} from "../Command";
+import {getName} from "./util/GuildMemberUtil";
 
 export const Hello : Command = {
     name: "hello",
     description: "Returns a greeting",
-    run: async (client: Client, interaction: ChatInputCommandInteraction) => {
+    run: async (client: Client, interaction: ChatInputCommandInteraction): Promise<void> => {
 
-        const content = `Hello **${interaction.user.displayName}**!👋` //TODO NICKNAME!!!
+        const user: GuildMember =  await interaction.guild.members.fetch(
+            interaction.user
+        )
+
+        const content = `Hello **${getName(user)}**!👋`;
 
         await interaction.reply({
             ephemeral: true,

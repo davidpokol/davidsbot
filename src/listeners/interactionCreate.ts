@@ -2,9 +2,10 @@ import {
     Client,
     ChatInputCommandInteraction
 } from "discord.js";
-import { Commands } from "../Commands";
+import {Commands} from "../Commands";
+
 export default (client: Client): void => {
-    client.on("interactionCreate", async (interaction: ChatInputCommandInteraction) => {
+    client.on("interactionCreate", async (interaction: ChatInputCommandInteraction): Promise<void> => {
         if (interaction.isCommand()) {
             await handleSlashCommand(client, interaction);
         }
