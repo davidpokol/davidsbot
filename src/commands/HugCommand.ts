@@ -7,9 +7,9 @@ import {
 } from "discord.js";
 import {Command} from "../Command";
 import {hunTol} from "magyar-rag";
-import {getName} from "./util/GuildMemberUtil";
+import {getName} from "../util/GuildMemberUtil";
 
-export const Hug : Command = {
+export const HugCommand : Command = {
     name: "hug",
     description: "Give somebody a virtual hug! 🤗",
     options: [

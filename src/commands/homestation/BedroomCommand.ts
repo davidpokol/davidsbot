@@ -5,12 +5,12 @@ import {
 } from "discord.js";
 import {Command} from "../../Command";
 import {All} from "./response/HomeStationResponse";
-import {formatSwitchStatus} from "../util/StringUtil";
-import {getData} from "../util/ApiUtil";
+import {formatSwitchStatus} from "../../util/StringUtil";
+import {getData} from "../../util/ApiUtil";
 
 const endpoint = process.env.HOMESTATION_ENDPOINT;
 
-export const Bedroom: Command = {
+export const BedroomCommand: Command = {
     name: 'bedroom',
     description: 'Returns some info about david\'s bedroom. 🙂',
     run: async (client: Client, interaction: CommandInteraction): Promise<void> => {
@@ -21,8 +21,8 @@ export const Bedroom: Command = {
         const embed = new EmbedBuilder()
             .setTitle("🛏️ david\'s bedroom...")
             .setDescription(`
-                :thermometer:  **Temperature:** ${response.temperatureSensor.temperature}${response.temperatureSensor.
-                    temperatureUnit}\r
+                :thermometer: **Temperature:** ${response.temperatureSensor.temperature}`
+                    +`${response.temperatureSensor.temperatureUnit}\r
                 :droplet: **Humidity:** ${response.temperatureSensor.humidityPercent}%\r
                 :watch: **Last updated:** <t:${response.temperatureSensor.lastUpdated}:T>\r\n
                 :potted_plant:  **Plant irrigation level:** ${response.plantSensor.moisturePercent}%\r

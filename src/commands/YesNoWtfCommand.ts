@@ -4,7 +4,7 @@ import {
     EmbedBuilder
 } from "discord.js";
 import {Command} from "../Command";
-import {getData} from "./util/ApiUtil";
+import {getData} from "../util/ApiUtil";
 
 const endpoint = 'https://yesno.wtf/api';
 
@@ -14,7 +14,7 @@ type YesNoWtfResponse = {
     image: string;
 };
 
-export const YesNoWtf: Command = {
+export const YesNoWtfCommand: Command = {
     name: 'yesnowtf',
     description: 'Yes Or No? 😂 (5% chance for magyi nod)',
     run: async (client: Client, interaction: CommandInteraction): Promise<void> => {

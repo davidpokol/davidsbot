@@ -12,9 +12,9 @@ import {
     to
 } from 'nevnap';
 import {Command} from "../Command";
-import {firstUpper} from "./util/StringUtil";
+import {firstUpper} from "../util/StringUtil";
 
-export const NameDays : Command = {
+export const NameDaysCommand : Command = {
     name: 'namedays',
     description: 'wanna\' know what the recent name days are? 🤔',
     options: [

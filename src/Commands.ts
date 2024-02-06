@@ -1,14 +1,14 @@
 import {Command} from "./Command";
-import {Hello} from "./commands/Hello";
-import {Hug} from "./commands/Hug";
-import {NameDays} from "./commands/NameDays";
-import {Bedroom} from "./commands/homestation/Bedroom";
-import {YesNoWtf} from "./commands/YesNoWtf";
+import {HelloCommand} from "./commands/hello/HelloCommand";
+import {HugCommand} from "./commands/HugCommand";
+import {NameDaysCommand} from "./commands/NameDaysCommand";
+import {BedroomCommand} from "./commands/homestation/BedroomCommand";
+import {YesNoWtfCommand} from "./commands/YesNoWtfCommand";
 
 export const Commands: Command[] = [
-    Hello,
-    Hug,
-    NameDays,
-    Bedroom,
-    YesNoWtf,
+    HelloCommand,
+    HugCommand,
+    NameDaysCommand,
+    BedroomCommand,
+    YesNoWtfCommand,
 ];

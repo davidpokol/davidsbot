@@ -1,0 +1,167 @@
+{
+  "hungarian": {
+    "flag": "\uD83C\uDDED\uD83C\uDDFA",
+    "greetings": [
+      {
+        "content": "Szia",
+        "emoji": "\uD83E\uDD17",
+        "postFix": "!!"
+      },
+      {
+        "content": "Üdv",
+        "emoji": "\uD83E\uDD1D",
+        "postFix": "!"
+      },
+      {
+        "content": "Hali",
+        "emoji": "\uD83D\uDC4B",
+        "postFix": "!"
+      },
+      {
+        "content": "**Csülök**",
+        "emoji": "\uD83C\uDF56",
+        "postFix": "!"
+      }
+    ]
+  },
+  "english": {
+    "flag": "\uD83C\uDDFA\uD83C\uDDF8",
+    "greetings": [
+      {
+        "content": "Hi",
+        "emoji": "\uD83E\uDD17",
+        "postFix": "!"
+      },
+      {
+        "content": "Hello",
+        "emoji": "\uD83D\uDC4B",
+        "postFix": "!"
+      },
+      {
+        "content": "Howdy",
+        "emoji": "\uD83D\uDE0F",
+        "postFix": "?"
+      },
+      {
+        "content": "Yo",
+        "emoji": "✌\uFE0F",
+        "postFix": "!"
+      },
+      {
+        "content": "**Wasaaa'**",
+        "emoji": "☎\uFE0F \uD83C\uDF7B",
+        "postFix": "?"
+      },
+      {
+        "content": "Hey there",
+        "emoji": "\uD83D\uDD90",
+        "postFix": "!"
+      },
+      {
+        "content": "Ahoy",
+        "emoji": "⛵",
+        "postFix": "!"
+      },
+      {
+        "content": "Good day",
+        "emoji": "\uD83C\uDF1E",
+        "postFix": "!"
+      },
+      {
+        "content": "What's happening",
+        "emoji": "\uD83D\uDE0E",
+        "postFix": "?"
+      }
+    ],
+    "german": {
+      "flag": "\uD83C\uDDE9\uD83C\uDDEA",
+      "greetings": [
+        {
+          "content": "**Guten tag!!**",
+          "emoji": "\uD83E\uDD68",
+          "postFix": ""
+        },
+        {
+          "content": "Hallo",
+          "emoji": "\uD83E\uDD68",
+          "postFix": "!"
+        },
+        {
+          "content": "Tschüss",
+          "emoji": "✋",
+          "postFix": "!"
+        }
+      ]
+    }
+  },
+  "french": {
+    "flag": "\uD83C\uDDEB\uD83C\uDDF7",
+    "greetings": [
+      {
+        "content": "Bonjour",
+        "emoji": "\uD83C\uDF77",
+        "postFix": "!"
+      },
+      {
+        "content": "Salut",
+        "emoji": "\uD83E\uDD50",
+        "postFix": "!"
+      }
+    ]
+  },
+  "korean": {
+    "flag": "\uD83C\uDDF0\uD83C\uDDF7",
+    "greetings": [
+      {
+        "content": "안녕하세요 ||Annyeonghaseyo||",
+        "emoji": "",
+        "postFix": ""
+      }
+    ]
+  },
+  "chinese": {
+    "flag": "\uD83C\uDDE8\uD83C\uDDF3",
+    "greetings": [
+      {
+        "content": "你好 ||Nihao||",
+        "emoji": "\uD83D\uDC3C",
+        "postFix": "!"
+      }
+    ]
+  },
+  "japanese": {
+    "flag": "\uD83C\uDDEF\uD83C\uDDF5",
+    "greetings": [
+      {
+        "content": "こんにちわ ||Konnichiwa||",
+        "emoji": "⛩\uFE0F",
+        "postFix": "!"
+      }
+    ]
+  },
+  "spanish": {
+    "flag": "\uD83C\uDDEA\uD83C\uDDF8",
+    "greetings": [
+      {
+        "content": "¡Hola",
+        "emoji": "\uD83C\uDF2E",
+        "postFix": "!"
+      }
+    ]
+  },
+  "italian": {
+    "flag": "\uD83C\uDDEE\uD83C\uDDF9",
+    "greetings": [
+      {
+        "content": "Ciao",
+        "emoji": "\uD83D\uDEF5",
+        "postFix": "!"
+      },
+      {
+        "content": "Buon giorno",
+        "emoji": "\uD83E\uDD0C",
+        "postFix": "!"
+      }
+    ]
+  }
+}
