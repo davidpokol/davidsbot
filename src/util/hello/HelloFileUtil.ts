@@ -3,6 +3,6 @@ import {readFileSync} from "fs";
 
 export function readGreetings(): Greetings {
 
-    let rawData  = readFileSync('resources/greetings.json');
+    let rawData  = readFileSync("resources/greetings.json");
     return JSON.parse(rawData.toString())
 }

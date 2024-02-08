@@ -15,23 +15,23 @@ import {Command} from "../Command";
 import {firstUpper} from "../util/StringUtil";
 
 export const NameDaysCommand : Command = {
-    name: 'namedays',
-    description: 'wanna\' know what the recent name days are? 🤔',
+    name: "namedays",
+    description: "Recent namedays 📅",
     options: [
         {
             name: "name",
-            description: "wanna\' know when a name is celebrated? 🤔",
+            description: "enter a name",
             type: ApplicationCommandOptionType.String,
             required: false,
         }
     ],
-    run: async (client: Client, interaction: ChatInputCommandInteraction): Promise<void> => {
+    run: async (_: Client, interaction: ChatInputCommandInteraction): Promise<void> => {
 
         let embed = new EmbedBuilder()
-            .setTitle("🎉 Névnapok: ")
+            .setTitle("🎉 Névnapok:")
             .setColor(Colors.Aqua);
 
-        const name = firstUpper(interaction.options.getString('name'));
+        const name = firstUpper(interaction.options.getString("name"));
 
         if (!!name) {
             let days = to(name);
@@ -39,14 +39,14 @@ export const NameDaysCommand : Command = {
             if (days.length > 0) {
                 embed.setDescription(`**${name}** ekkor ünnepli névnapját: **${days}**`)
             } else {
-                embed.setDescription(`Sajnos nem találtam **${name}** nevet. :confused:`)
+                embed.setDescription(`Sajnos nem találtam **${name}** nevet. 😕`)
                     .setColor(Colors.Red);
             }
 
         } else {
-            embed.setDescription(`
-            :white_small_square: Ma **${today()}** ünnepli névnapját!\r
-            :white_small_square: Holnap **${tomorrow()}** fogja ünnepleni névnapját.`);
+            embed.setDescription(
+                `:white_small_square: Ma **${today()}** ünnepli névnapját!\r`
+                +`:white_small_square: Holnap **${tomorrow()}** fogja ünnepleni névnapját.`);
         }
         await interaction.reply({embeds: [embed]});
     }

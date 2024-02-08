@@ -8,6 +8,7 @@ import {
 import {Command} from "../Command";
 import {hunTol} from "magyar-rag";
 import {getName} from "../util/GuildMemberUtil";
+import {replyErrorMessage} from "../util/CommandUtil";
 
 export const HugCommand : Command = {
     name: "hug",
@@ -15,12 +16,12 @@ export const HugCommand : Command = {
     options: [
         {
             name: "member",
-            description: "the victim 👀",
+            description: "select the victim 👀",
             type: ApplicationCommandOptionType.User,
             required: true,
         },
     ],
-    run: async (client: Client, interaction: ChatInputCommandInteraction): Promise<void> => {
+    run: async (_: Client, interaction: ChatInputCommandInteraction): Promise<void> => {
 
         let embed = new EmbedBuilder()
             .setColor(Colors.Red);
@@ -30,21 +31,27 @@ export const HugCommand : Command = {
         );
 
         let toMember: GuildMember = await interaction.guild.members.fetch(
-            interaction.options.getUser('member')
+            interaction.options.getUser("member")
         );
 
         const toName = getName(toMember);
         const fromName = getName(fromMember);
 
+        if (!toName || !fromName) {
+           await replyErrorMessage(interaction);
+           return;
+        }
+
         if (toMember.id !== process.env.BOT_ID) {
-            embed.setDescription(`
-                    **${toName}** kapott egy ölelést **${hunTol(fromName)}**!\n
-                    ||<@${toMember.id}>||`)
-                .setImage('https://media1.tenor.com/images/d684820e615fb68c21d4a9fea375c6e9/tenor.gif');
+            embed.setDescription(
+                `**${toName}** kapott egy ölelést **${hunTol(fromName)}**!\n\n`
+                +`||<@${toMember.id}>||`
+            )
+                .setImage('https://c.tenor.com/x2Ne9xx0SBgAAAAC/tenor.gif');
 
         } else {
             embed.setDescription(`**Köszönöm az ölelést <@${fromMember.id}>!**`)
-                .setImage('https://i.imgur.com/rL6PmTl.png');
+                .setImage('https://i.imgur.com/XPBtBDK.png');
         }
 
         await interaction.reply({embeds: [embed]});

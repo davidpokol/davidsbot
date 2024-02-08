@@ -11,7 +11,7 @@ type PlantSensor = {
 };
 
 export type Switch = {
-    readonly id: number;
+    readonly id?: number;
     readonly isOn: boolean;
     readonly lastSwitched?: number;
 };

@@ -7,7 +7,7 @@ import {getRandomLanguage, getRandomGreeting} from "../../util/hello/HelloRandom
 
 export const HelloCommand : Command = {
     name: "hello",
-    description: "Returns a greeting",
+    description: "Greetings from around the world.. 👋",
     run: async (_: Client, interaction: ChatInputCommandInteraction): Promise<void> => {
 
         const user: GuildMember =  await interaction.guild.members.fetch(
@@ -18,13 +18,12 @@ export const HelloCommand : Command = {
         let language: Language = getRandomLanguage(greetings);
         let greeting: Greeting = getRandomGreeting(language);
 
-        const content = `${language.flag} ${greeting.content},`
-            +` **${getName(user)}**${greeting.postFix} ${greeting.emoji}`;
+        const content = `${language.flag} ${greeting.content}, `
+            +`**${getName(user)}**${greeting.postFix} ${greeting.emoji}`;
 
         await interaction.reply({
             ephemeral: true,
             content
         });
-        readGreetings();
     }
 };

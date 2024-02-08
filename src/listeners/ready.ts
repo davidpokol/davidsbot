@@ -11,11 +11,11 @@ export default (client: Client): void => {
             activities:
             [
                 {
-                    name: 'hide and seek',
+                    name: "hide and seek",
                     type: ActivityType.Playing
                 }
             ],
-            status: 'dnd'
+            status: "dnd"
         });
 
         await client.application.commands.set(Commands);
