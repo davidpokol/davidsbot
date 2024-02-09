@@ -1,0 +1,102 @@
+{
+  "BG": {
+    "name": "Bulgarian",
+    "flag": "\uD83C\uDDE7\uD83C\uDDEC"
+  },
+  "ZH": {
+    "name": "Chinese (simplified)",
+    "flag": "\uD83C\uDDE8\uD83C\uDDF3"
+  },
+  "CS": {
+    "name": "Czech",
+    "flag": "\uD83C\uDDE8\uD83C\uDDFF"
+  },
+  "DA": {
+    "name": "Danish",
+    "flag": "\uD83C\uDDE9\uD83C\uDDF0"
+  },
+  "NL": {
+    "name": "Dutch",
+    "flag": "\uD83C\uDDF3\uD83C\uDDF1"
+  },
+  "EN": {
+    "name": "English",
+    "flag": "\uD83C\uDDFA\uD83C\uDDF8"
+  },
+  "FR": {
+    "name": "French",
+    "flag": "\uD83C\uDDEB\uD83C\uDDF7"
+  },
+  "DE": {
+    "name": "German",
+    "flag": "\uD83C\uDDE9\uD83C\uDDEA"
+  },
+  "EL": {
+    "name": "Greek",
+    "flag": "\uD83C\uDDEC\uD83C\uDDF7"
+  },
+  "HU": {
+    "name": "Hungarian",
+    "flag": "\uD83C\uDDED\uD83C\uDDFA"
+  },
+  "ID": {
+    "name": "Indonesian",
+    "flag": "\uD83C\uDDEE\uD83C\uDDE9"
+  },
+  "IT": {
+    "name": "Italian",
+    "flag": "\uD83C\uDDEE\uD83C\uDDF9"
+  },
+  "JA": {
+    "name": "Japanese",
+    "flag": "\uD83C\uDDEF\uD83C\uDDF5"
+  },
+  "KO": {
+    "name": "Korean",
+    "flag": "\uD83C\uDDF0\uD83C\uDDF5&\uD83C\uDDF0\uD83C\uDDF7"
+  },
+  "NB": {
+    "name": "Norwegian (Bokmål)",
+    "flag": "\uD83C\uDDF3\uD83C\uDDF4"
+  },
+  "PL": {
+    "name": "Polish",
+    "flag": "\uD83C\uDDF5\uD83C\uDDF1"
+  },
+  "PT": {
+    "name": "Portuguese",
+    "flag": "\uD83C\uDDF5\uD83C\uDDF9"
+  },
+  "RO": {
+    "name": "Romanian",
+    "flag": "\uD83C\uDDF7\uD83C\uDDF4"
+  },
+  "RU": {
+    "name": "Russian",
+    "flag": "\uD83C\uDDF7\uD83C\uDDFA"
+  },
+  "SK": {
+    "name": "Slovak",
+    "flag": "\uD83C\uDDF8\uD83C\uDDF0"
+  },
+  "SL": {
+    "name": "Slovenian",
+    "flag": "\uD83C\uDDF8\uD83C\uDDEE"
+  },
+  "ES": {
+    "name": "Spanish",
+    "flag": "\uD83C\uDDEA\uD83C\uDDF8"
+  },
+  "SV": {
+    "name": "Swedish",
+    "flag": "\uD83C\uDDF8\uD83C\uDDEA"
+  },
+  "TR": {
+    "name": "Turkish",
+    "flag": "\uD83C\uDDF9\uD83C\uDDF7"
+  },
+  "UK": {
+    "name": "Ukrainian",
+    "flag": "\uD83C\uDDFA\uD83C\uDDE6"
+  }
+}
