@@ -19,7 +19,7 @@ export const BedroomCommand: Command = {
         const response: Response = await sendGetRequestWithTimeout(url);
 
         if (response == null || response.status != 200) {
-            await replyErrorMessage(interaction);
+            await replyErrorMessage({interaction : interaction});
             return;
         }
         const data: All = await response.json();

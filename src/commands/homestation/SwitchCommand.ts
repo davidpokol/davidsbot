@@ -40,7 +40,7 @@ export const SwitchCommand: Command = {
             baseUrl.concat(switchId.toString())
         )
         if (getResponse == null || getResponse.status != 200) {
-            await replyErrorMessage(interaction);
+            await replyErrorMessage({interaction : interaction});
             return;
         }
         const getData: Switch = await getResponse.json();
@@ -49,7 +49,7 @@ export const SwitchCommand: Command = {
             baseUrl.concat(switchId.toString()),{isOn: !getData.isOn}
         );
         if (postResponse == null || postResponse.status != 200) {
-            await replyErrorMessage(interaction);
+            await replyErrorMessage({interaction : interaction});
             return;
         }
         const postData: Switch = await postResponse.json();

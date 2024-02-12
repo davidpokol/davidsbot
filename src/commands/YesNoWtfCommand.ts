@@ -23,7 +23,7 @@ export const YesNoWtfCommand: Command = {
         const response: Response = await sendGetRequestWithTimeout(endpoint)
 
         if (response == null || response.status != 200) {
-            await replyErrorMessage(interaction)
+            await replyErrorMessage({interaction : interaction})
             return;
         }
 

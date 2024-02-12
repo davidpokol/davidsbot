@@ -38,7 +38,7 @@ export const HugCommand : Command = {
         const fromName = getName(fromMember);
 
         if (!toName || !fromName) {
-           await replyErrorMessage(interaction);
+           await replyErrorMessage({interaction : interaction});
            return;
         }
 

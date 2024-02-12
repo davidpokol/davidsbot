@@ -49,22 +49,24 @@ export const DeepLCommand: Command = {
         const targetLang = interaction.options.getString('target-lang');
 
         if (!text || !sourceLang || !targetLang) {
-            await replyErrorMessage(interaction);
+            await replyErrorMessage({interaction : interaction});
             return;
         }
 
         if (text.length > 100) {
-            await replyErrorMessage(
-                interaction,
-                "✖ The given text is too long! The limit is **100** characters**!**"
-            );
+            await replyErrorMessage({
+                interaction: interaction,
+                isUrl: false,
+                content: "The given text is too long! The limit is **100** characters**!**"
+            });
             return;
         }
         if (sourceLang === targetLang) {
-            await replyErrorMessage(
-                interaction,
-                "https://c.tenor.com/Zm4UTU5fw2UAAAAd/tenor.gif"
-            );
+            await replyErrorMessage({
+                interaction: interaction,
+                isUrl: true,
+                content: "https://c.tenor.com/Zm4UTU5fw2UAAAAd/tenor.gif"
+            });
             return;
         }
 

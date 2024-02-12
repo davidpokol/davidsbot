@@ -6,13 +6,15 @@ import {BedroomCommand} from "./commands/homestation/BedroomCommand";
 import {YesNoWtfCommand} from "./commands/YesNoWtfCommand";
 import {SwitchCommand} from "./commands/homestation/SwitchCommand";
 import {DeepLCommand} from "./commands/deepl/DeepLCommand";
+import {DuolingoCommand} from "./commands/DuolingoCommand";
 
 export const Commands: Command[] = [
+    BedroomCommand,
     DeepLCommand,
+    DuolingoCommand,
     HelloCommand,
     HugCommand,
     NameDaysCommand,
-    BedroomCommand,
     SwitchCommand,
     YesNoWtfCommand,
 ];

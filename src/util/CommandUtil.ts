@@ -1,13 +1,19 @@
 import {CommandInteraction} from "discord.js";
 
-const errorMessage = "✖ **Oops!** There was a problem. Try again later...";
+const errorMessage = "**Oops!** There was a problem. Try again later...";
 
-export async function replyErrorMessage(interaction: CommandInteraction, message?: string): Promise<void> {
-    if(!message) {
-        message = errorMessage;
+interface ReplyErrorMessageParams {
+    interaction: CommandInteraction;
+    isUrl?: boolean;
+    content?: string;
+}
+
+export async function replyErrorMessage({interaction, isUrl, content}: ReplyErrorMessageParams): Promise<void> {
+    if(!content) {
+        content = errorMessage;
     }
     await interaction.reply({
         ephemeral: true,
-        content: message
+        content: `${!isUrl? "✖":""} ${content}`
     });
 }
