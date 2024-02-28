@@ -1,12 +1,7 @@
-import {
-    Client,
-    ChatInputCommandInteraction,
-    ApplicationCommandOptionType,
-} from "discord.js";
+import {ApplicationCommandOptionType, ChatInputCommandInteraction, Client,} from "discord.js";
 import {Command} from "../../Command";
-import {Switch} from "./response/HomeStationResponse";
 import {sendGetRequestWithTimeout, sendPostRequestWithTimeout} from "../../util/ApiUtil";
-import {numberToString, formatSwitchStatus} from "../../util/StringUtil";
+import {formatSwitchStatus, numberToString} from "../../util/StringUtil";
 import {replyErrorMessage} from "../../util/CommandUtil";
 
 const baseUrl = process.env.HS_SWITCH_BASE_URL;
@@ -34,31 +29,31 @@ export const SwitchCommand: Command = {
     ],
     run: async (_: Client, interaction: ChatInputCommandInteraction): Promise<void> => {
 
+        await interaction.deferReply({ephemeral: true});
         const switchId: number = interaction.options.getInteger("id");
 
         const getResponse: Response = await sendGetRequestWithTimeout(
             baseUrl.concat(switchId.toString())
         )
         if (getResponse == null || getResponse.status != 200) {
-            await replyErrorMessage({interaction : interaction});
+            await replyErrorMessage(interaction);
             return;
         }
-        const getData: Switch = await getResponse.json();
+        const getData: JSON = await getResponse.json();
 
         const postResponse: Response = await sendPostRequestWithTimeout(
-            baseUrl.concat(switchId.toString()),{isOn: !getData.isOn}
+            baseUrl.concat(switchId.toString()), {isOn: !getData["isOn"]}
         );
         if (postResponse == null || postResponse.status != 200) {
-            await replyErrorMessage({interaction : interaction});
+            await replyErrorMessage(interaction);
             return;
         }
-        const postData: Switch = await postResponse.json();
+        const postData: JSON = await postResponse.json();
 
         const content = `✔ **Switch :${numberToString(switchId)}: `
-            +`**turned** ${formatSwitchStatus(postData.isOn)}**`;
+            + `**turned** ${formatSwitchStatus(postData["isOn"])}**`;
 
-        await interaction.reply({
-            ephemeral: true,
+        await interaction.editReply({
             content: content
         });
     }

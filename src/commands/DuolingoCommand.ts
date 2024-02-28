@@ -24,6 +24,8 @@ export const DuolingoCommand: Command = {
     ],
     run: async (_: Client, interaction: ChatInputCommandInteraction): Promise<void> => {
 
+        await interaction.deferReply();
+
         const username = interaction.options.getString("username");
         await fetch(baseUrl.concat(username))
             .then(async (response) => {
@@ -33,10 +35,10 @@ export const DuolingoCommand: Command = {
 
                     if (!userData) {
                         await replyErrorMessage(
-                            {
-                                interaction : interaction,
-                                isUrl : false,
-                                content : `**Could not find user** with username: ${username}`}
+                            interaction, {
+                                isDeferred: true,
+                                content: `**Could not find user** with username: ${username}`
+                            }
                         );
                         return;
                     }
@@ -88,7 +90,7 @@ export const DuolingoCommand: Command = {
                     embed.addFields(embedFields)
 
 
-                    await interaction.reply(
+                    await interaction.editReply(
                         {
                             embeds: [
                                 embed
@@ -97,6 +99,6 @@ export const DuolingoCommand: Command = {
                         }
                     );
                 })
-            });
+            }).catch(async () => await replyErrorMessage(interaction, {isDeferred: true}));
     }
 }

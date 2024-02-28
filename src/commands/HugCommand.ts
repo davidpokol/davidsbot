@@ -3,7 +3,7 @@ import {
     ChatInputCommandInteraction,
     EmbedBuilder,
     ApplicationCommandOptionType,
-    Colors, GuildMember,
+    Colors, GuildMember, User,
 } from "discord.js";
 import {Command} from "../Command";
 import {hunTol} from "magyar-rag";
@@ -26,19 +26,25 @@ export const HugCommand : Command = {
         let embed = new EmbedBuilder()
             .setColor(Colors.Red);
 
+        const mentionable = interaction.options.get("member").user;
+
+        if (!interaction.guild.members.cache.get(mentionable.id)) {
+            await replyErrorMessage(interaction,{
+                content: "You can't send hug to somebody who is not in this server.",
+            });
+            return;
+        }
+
         const fromMember: GuildMember =  await interaction.guild.members.fetch(
             interaction.user
         );
 
-        let toMember: GuildMember = await interaction.guild.members.fetch(
-            interaction.options.getUser("member")
-        );
-
+        const toMember = await interaction.guild.members.fetch(mentionable);
         const toName = getName(toMember);
         const fromName = getName(fromMember);
 
         if (!toName || !fromName) {
-           await replyErrorMessage({interaction : interaction});
+           await replyErrorMessage(interaction);
            return;
         }
 

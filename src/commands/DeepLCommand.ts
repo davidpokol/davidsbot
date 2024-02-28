@@ -4,13 +4,13 @@ import {
     ChatInputCommandInteraction,
     Client
 } from "discord.js";
-import {Command} from "../../Command";
+import {Command} from "../Command";
 
 import {TargetLanguageCode, Translator} from 'deepl-node';
 import {SourceLanguageCode} from "deepl-node/dist/types";
-import {readJSONFromFile} from "../../util/JsonUtil";
-import {getLanguageChoices} from "../../util/deepl/DeepLCommandUtil";
-import {replyErrorMessage} from "../../util/CommandUtil";
+import {readJSONFromFile} from "../util/JsonUtil";
+import {getLanguageChoices} from "../util/deepl/DeepLCommandUtil";
+import {replyErrorMessage} from "../util/CommandUtil";
 
 const translator = new Translator(process.env.DEEPL_AUTH_KEY);
 
@@ -49,21 +49,19 @@ export const DeepLCommand: Command = {
         const targetLang = interaction.options.getString('target-lang');
 
         if (!text || !sourceLang || !targetLang) {
-            await replyErrorMessage({interaction : interaction});
+            await replyErrorMessage(interaction);
             return;
         }
 
         if (text.length > 100) {
-            await replyErrorMessage({
-                interaction: interaction,
-                isUrl: false,
+            await replyErrorMessage(
+                interaction,{
                 content: "The given text is too long! The limit is **100** characters**!**"
             });
             return;
         }
         if (sourceLang === targetLang) {
-            await replyErrorMessage({
-                interaction: interaction,
+            await replyErrorMessage(interaction,{
                 isUrl: true,
                 content: "https://c.tenor.com/Zm4UTU5fw2UAAAAd/tenor.gif"
             });

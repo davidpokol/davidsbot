@@ -1,8 +1,7 @@
-import {Greetings} from "../../commands/hello/model/GreetingModel";
 import {readFileSync} from "fs";
 
-export function readGreetings(): Greetings {
+export function readGreetings(): JSON {
 
-    let rawData  = readFileSync("resources/greetings.json");
+    let rawData = readFileSync("resources/greetings.json");
     return JSON.parse(rawData.toString())
 }
