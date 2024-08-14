@@ -5,7 +5,7 @@ import {
     ApplicationCommandOptionType,
     Colors, GuildMember, User,
 } from "discord.js";
-import {Command} from "../Command";
+import {Command} from "./Command";
 import {hunTol} from "magyar-rag";
 import {getName} from "../util/GuildMemberUtil";
 import {replyErrorMessage} from "../util/CommandUtil";

@@ -4,7 +4,7 @@ import {
     ChatInputCommandInteraction,
     Client
 } from "discord.js";
-import {Command} from "../Command";
+import {Command} from "./Command";
 
 import {TargetLanguageCode, Translator} from 'deepl-node';
 import {SourceLanguageCode} from "deepl-node/dist/types";

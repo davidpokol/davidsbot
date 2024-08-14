@@ -1,5 +1,5 @@
 import {Client, CommandInteraction, EmbedBuilder} from "discord.js";
-import {Command} from "../../Command";
+import {Command} from "../Command";
 import {formatSwitchStatus} from "../../util/StringUtil";
 import {sendGetRequestWithTimeout} from "../../util/ApiUtil";
 import {replyErrorMessage} from "../../util/CommandUtil";

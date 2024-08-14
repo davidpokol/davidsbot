@@ -5,6 +5,7 @@ export function getRandomLanguage(greetings: JSON): JSON {
 }
 
 export function getRandomGreeting(language: JSON): JSON {
-    const index = Math.floor(Math.random() * language["greetings"].length);
-    return language["greetings"][index];
+    const languageElement = language["greetings"];
+    const index = Math.floor(Math.random() * languageElement.length);
+    return languageElement[index];
 }

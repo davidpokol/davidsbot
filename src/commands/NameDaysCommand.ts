@@ -11,7 +11,7 @@ import {
     tomorrow,
     to
 } from 'nevnap';
-import {Command} from "../Command";
+import {Command} from "./Command";
 import {firstUpper} from "../util/StringUtil";
 
 export const NameDaysCommand : Command = {

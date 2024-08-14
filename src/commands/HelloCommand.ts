@@ -1,5 +1,5 @@
 import {ChatInputCommandInteraction, Client, GuildMember,} from "discord.js";
-import {Command} from "../Command";
+import {Command} from "./Command";
 import {getName} from "../util/GuildMemberUtil";
 import {readGreetings} from "../util/hello/HelloFileUtil"
 import {getRandomLanguage, getRandomGreeting} from "../util/hello/HelloRandomUtil";

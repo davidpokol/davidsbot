@@ -1,4 +1,4 @@
-import {Command} from "./Command";
+import {Command} from "./commands/Command";
 import {HelloCommand} from "./commands/HelloCommand";
 import {HugCommand} from "./commands/HugCommand";
 import {NameDaysCommand} from "./commands/NameDaysCommand";

@@ -3,7 +3,7 @@ import {
     Client,
     EmbedBuilder
 } from "discord.js";
-import {Command} from "../Command";
+import {Command} from "./Command";
 import {sendGetRequestWithTimeout} from "../util/ApiUtil";
 import {replyErrorMessage} from "../util/CommandUtil";
 

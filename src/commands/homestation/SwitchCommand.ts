@@ -1,5 +1,5 @@
 import {ApplicationCommandOptionType, ChatInputCommandInteraction, Client,} from "discord.js";
-import {Command} from "../../Command";
+import {Command} from "../Command";
 import {sendGetRequestWithTimeout, sendPostRequestWithTimeout} from "../../util/ApiUtil";
 import {formatSwitchStatus, numberToString} from "../../util/StringUtil";
 import {replyErrorMessage} from "../../util/CommandUtil";
@@ -16,7 +16,7 @@ export const SwitchCommand: Command = {
             type: ApplicationCommandOptionType.Integer,
             choices: [
                 {
-                    name: "1. 💧Aroma diffuser",
+                    name: "1. 🪴Plant irrigation system",
                     value: 1
                 },
                 {
